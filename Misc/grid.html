@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .container{
+            background-color: aliceblue;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            padding: 4rem;
+            gap:10px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(4,1fr);
+        }
+
+        .item{
+            display: flex;
+            background-color: violet;
+            border: 5px solid black;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            font-size: larger;
+        }
+
+        #header{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        #sidebar{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            /* grid-column-start: 1;
+            grid-column-end: 2; */
+        }
+        #content{
+          grid-column-start: 2;
+          grid-column-end: 4;
+        }
+        #footer{
+          grid-column-start: 1;
+          grid-column-end: 4;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="header">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus qui eaque nam cumque animi ratione ipsa veritatis consequuntur, facere minus recusandae aliquam labore quasi nobis aspernatur, facilis excepturi eveniet. Minus exercitationem quidem voluptate vitae harum non, eaque, iure porro voluptatum earum dolore modi quia dolorem qui repellat perspiciatis. Debitis, perferendis?</div>
+      <div class="item" id="sidebar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae est harum vero id dolorum beatae, praesentium cupiditate nobis tenetur! Eaque, similique. Cupiditate similique vitae dolores tempore architecto maiores voluptas tenetur?</div>
+      <div class="item" id="content">Item3</div>
+      <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, quasi! Laboriosam, beatae unde consequuntur atque eaque iure voluptates reprehenderit molestias.</div>
+      <div class="item">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia dolor adipisci provident! Rem perspiciatis, itaque error cum ut pariatur aut omnis eos deleniti similique laboriosam.</div>
+      <div class="item" id="footer">Item6</div>
+    </div>
+  </body>
+</html>
