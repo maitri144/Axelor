@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axelor Form</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <center>
+    <h1>
+        Registration Form
+    </h1>
+    <form action="#">
+        <table style="border-spacing: 30px;overflow-x:auto;">
+            <tr>
+                <td><label for="name">Username : </label></td>
+                <td><input type="text" id="name" name="name"><br></td>
+            </tr>
+            <tr>
+                <td><label for="pass">Password : </label></td>
+                <td><input type="text" id="pass" name="pass"></td><br>
+            </tr>
+            <tr>
+                <td><label for="city">City of Employment : </label></td>
+                <td><input type="text" id="city" name="city"><br></td>
+            </tr>
+            <tr>
+                <td><label for="server">Web Server : </label></td>
+                <td>
+                    <select id="server" name="server" size="-1">
+                    <option>select</option>
+                    <option>HTTP</option>
+                    <option>FTP</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="role">Select your role : </label></td>
+                <td>
+                    <input type="radio" id="role" name="role">Admin<br>
+                    <input type="radio" id="role" name="role">Engineer<br>
+                    <input type="radio" id="role" name="role">Manager<br>
+                    <input type="radio" id="role" name="role">Guest<br>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="sign">Single sign-on to the following : </label></td>
+                <td>
+                    <input type="checkbox" id="sign" name="sign">Mail<br>
+                    <input type="checkbox" id="sign" name="sign">Payroll<br>
+                    <input type="checkbox" id="sign" name="sign">Self-service<br>
+                </td>
+            </tr>
+            <tr>
+              
+                <td><input type="button" id="login" value="Login"></td>
+                <td><input type="button" id="reset" value="Reset"></td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>
