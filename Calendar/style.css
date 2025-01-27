@@ -27,15 +27,16 @@ body{
     justify-content: space-between;
 }
 
-header #full-date-display{
+#full-date-display{
     font-weight: 500;
     font-size: 1.45rem;
 }
 
-header .calendar-navigation {
+.calendar-navigation {
     display: flex;
 }
-header .calendar-navigation span{
+
+.calendar-navigation span{
     cursor: pointer;
     height: 38px;
     width: 38px;
@@ -53,7 +54,7 @@ header .calendar-navigation span{
     margin-right: -10px;
 }
 
-header .calendar-navigation span:hover {
+.calendar-navigation span:hover {
     background: #f2f2f2;
 }
 
@@ -68,7 +69,7 @@ header .calendar-navigation span:hover {
     text-align: center;
 }
 
-.calendar-body .calendar-dates {
+.calendar-dates {
     margin-bottom: 20px;
 }
 
@@ -78,13 +79,13 @@ header .calendar-navigation span:hover {
     color: #414141;
 }
 
-.calendar-body .calendar-weekdays li {
+.calendar-weekdays li {
     cursor: default;
     font-weight: 500;
     margin-bottom: 10px
 }
 
-.calendar-body .calendar-dates li{
+.calendar-dates li{
     margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
@@ -118,3 +119,18 @@ header .calendar-navigation span:hover {
 .calendar-dates li:not(.active):hover::before {
     background: #f2f0f0;
 }
+
+
+/* .highlight {
+    background-color: #222699;
+    color: white;
+    position: absolute;
+    content: "";
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  } */
