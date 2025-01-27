@@ -1,12 +1,13 @@
 let date = new Date();
-let year = date.getFullYear();
-let month = date.getMonth();
+let Year = date.getFullYear();
+let Month = date.getMonth();
+let Today = date.getDate();
 
-let header_date = document.querySelector("#full-date-display");
-let calendar_dates = document.querySelector(".calendar-dates");
+const CurrentDate = document.querySelector("#full-date-display");
+const CalendarDates = document.querySelector(".calendar-dates");
 const Icons = document.querySelectorAll(".calendar-navigation span");
 
-const months = [
+const MonthsList = [
   "January",
   "February",
   "March",
@@ -21,49 +22,52 @@ const months = [
   "December",
 ];
 
-function display_calendar() {
-  let firstday = new Date(year, month, 1);
-  let lastday = new Date(year, month + 1, 0);
-  let firstdayIndex = firstday.getDay();
-  let lastdayIndex = lastday.getDay();
-  let numofdays = lastday.getDate();
-  let list = "";
 
-  header_date.textContent = `${months[month]} ${year}`;
+function DisplayCalendar() {
+  let FirstDay = new Date(Year, Month, 1);
+  let LastDay = new Date(Year, Month + 1, 0);
+  let FirstDayIndex = FirstDay.getDay();
+  let LastDayIndex = LastDay.getDay();
+  let NumOfDays = LastDay.getDate();
+  let List = "";
 
-  for (let i = firstdayIndex; i > 0; i--) {
-    list += `<li class="inactive">${numofdays - i + 1}</li>`;
+  CurrentDate.textContent = `${MonthsList[Month]} ${Year}`;
+
+  for (let i = FirstDayIndex; i > 0; i--) {
+    List += `<li class="inactive">${NumOfDays - i + 1}</li>`;
   }
 
-  for (let i = 1; i <= numofdays; i++) {
+  for (let i = 1; i <= NumOfDays; i++) {
     let isToday =
       i === date.getDate() &&
-      month === new Date().getMonth() &&
-      year === new Date().getFullYear()
+      Month === new Date().getMonth() &&
+      Year === new Date().getFullYear()
         ? "active"
         : "";
-    list += `<li class="${isToday}">${i}</li>`;
+
+    let isHighlighted = i === Today ? "highlight" : "";
+    List += `<li class="${isToday} ${isHighlighted}">${i}</li>`;
   }
 
-  for (let i = lastdayIndex; i < 6; i++) {
-    list += `<li class="inactive">${i - lastdayIndex + 1}</li>`;
+  for (let i = LastDayIndex; i < 6; i++) {
+    List += `<li class="inactive">${i - LastDayIndex + 1}</li>`;
   }
-  calendar_dates.innerHTML = list;
+  CalendarDates.innerHTML = List;
 }
 
-display_calendar();
+DisplayCalendar();
 
 Icons.forEach((icon) => {
   icon.addEventListener("click", () => {
-    month = icon.id === "prev" ? month - 1 : month + 1;
+    Month = icon.id === "prev" ? Month - 1 : Month + 1;
 
-    if (month < 0 || month > 11) {
-      date = new Date(year, month, new Date().getDate());
-      year = date.getFullYear();
-      month = date.getMonth();
+    if (Month < 0 || Month > 11) {
+      date = new Date(Year, Month, new Date().getDate());
+      Year = date.getFullYear();
+      Month = date.getMonth();
     } else {
       date = new Date();
     }
-    display_calendar();
+    DisplayCalendar();
   });
 });
